@@ -1,0 +1,78 @@
+# Virtual Machine Setup Lab
+### Summary
+During training, security professionals create labs to practice their skills. These virtual lab environments provide a safe place to run real world attacks without causing damage to actual systems. That being said, always be diligent in your security tests and make sure not to attack systems you don’t have permission to.
+
+In this lab we will be creating a network of 3 machines: Kali linux, windows 10, and metasploitable 2. The machines will reside on the same network and be able to communicate with each other as well as with the internet. To set up our virtual lab environment we will need to install VirtualBox which will run and network the 3 machines.
+
+***
+
+## Oracle VirtualBox Setup
+### Overview
+VirtualBox is a virtualization software and is free download and use for non-commercial purposes. It does require virtualization to be enabled on your system. You can enable your system’s virtualization settings with these links:
+
+* Windows: https://www.minitool.com/news/enable-virtualization-windows-10.html
+* Mac: https://apple.stackexchange.com/questions/394967/how-do-i-enable-intel-virtualization-in-a-macbook-pro
+
+Once virtualization is enabled, you can begin installing Oracle VirtualBox.
+
+### Steps
+1. Start by downloading the VirtualBox installer and Extension Pack for your system. You can download from here https://www.virtualbox.org/wiki/Downloads
+2. Once downloaded, install VirtualBox with the default settings.
+3. After installation, double click on the Extension Pack plugin to begin installation process with default settings.
+
+***
+
+## Kali VM Setup
+### Overview
+Kali Linux is a system designed for security testers. It is based on Debian Linux and it has many security tools preinstalled. It is regularly updated and has many different installation options available to it.
+
+### Steps
+1. Start with downloading the Kali VirtualBox ova file. You can download it from here https://www.kali.org/get-kali/#kali-virtual-machines
+2. You will need to decompress the file from its 7zip format. This can be done with a 7zip decompressor. If you don’t have one already installed, you can download one form here https://www.7-zip.org/download.html
+3. Once decompressed you should be left with a folder with three files in it. Open the Ovf file. This should open an import screen in VirtualBox. Most of the settings should be fine, however, you may want to up the RAM from 2048MB to 4096MB. Once Done, you can import. After the import is complete you should be all set with the Kali Machine. Simply double click on the machine to start it. Default Credentials are
+    * Username: kali
+    * Password: kali
+
+Import RAM  |  Kali Login
+:----------:|:------------:
+![Import RAM Update](./images/Picture01_vm_import.png) | ![Kali Login Page](./images/Picture02_kali_login.png)
+
+***
+
+## Windows VM Setup
+### Overview
+Given the popularly of Window’s systems, security experts need to be familiar with their defenses and vulnerabilities. Windows vms have a built in timer till they stop working: 90days from download.
+
+### Steps
+1. Start with downloading the Windows Virtual Machine file. You can download it from here: https://developer.microsoft.com/en-us/microsoft-edge/tools/vms/ One the zip file is done downloading unzip it.
+2. Once unzipped, simply double click on the Ovf file. This will open the VirtualBox import screen. You may want to up the RAM for this import from 4096MB to 8192MB or 16384MB depending on what you have available. Once set, you can import and when done, launch by double click the new machine. Default Credentials are
+    * Username: Admin
+    * Password: Passw0rd!
+
+***
+
+## Metasploitable 2 VM Setup
+### Overview
+Metasploitable 2 is a purposely vulnerable system with many vulnerabilities set up in it. This system should never be used in on an unsecured network. No personal files should be kept on this system either.
+
+### Steps
+1. You can download Metasploitable 2 from: https://sourceforge.net/projects/metasploitable/ Once downloaded, unzip the file.
+2. In VirtualBox click new. You can fill in the fields below and click Continue.
+
+New VM   |  Name Fields
+:-------:|:------------:
+![New Metasploitable2 VM](./images/Picture03_new.png) | ![Name Fields](./images/Picture04_name_type.png)
+
+3. 1024MG for RAM is plenty, click continue
+
+![RAM Allocation](./images/Picture05_megs.png)
+
+4. In the Hard Disk menu, click “Use an existing virtual hard disk file”. Select the folder option and then Add. Navigate to the expanded folder with the Metasploitable files select the vmdk file.
+
+Hard Disk p1 | Hard Disk p2
+:-----------:|:-------------:
+![HD_part1](./images/Picture06_hd_p1.png) | ![HD_part2](./images/Picture07_hd_p2.png)
+
+5. Double click on the newly created machine. Default Credentials are:
+    * Username: msfadmin
+    * Password: msfadmin
