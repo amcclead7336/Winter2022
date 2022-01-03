@@ -77,7 +77,7 @@ New VM   |  Name Fields
 :-------:|:------------:
 ![New Metasploitable2 VM](./images/Picture03_new.png) | ![Name Fields](./images/Picture04_name_type.png)
 
-3. 1024MG for RAM is plenty, click continue
+3. 1024MB for RAM is plenty, click continue
 
 ![RAM Allocation](./images/Picture05_megs.png)
 
