@@ -13,7 +13,7 @@ A Google Hack, or Dork as it's often called, is the application of advanced sear
 Google has many powerful advanced operators and most are easily readable. Some of my favorites are:
 
 * inurl:
-* site: 
+* site:
 * intext:
 
 There are other many more operators including "-" for excluding results. example: -keyword. Using "()" for segmenting queries. We'll see examples next. The advance searching language is very flexible as we'll see so feel free to explore and create your own searches.
@@ -23,12 +23,18 @@ There are other many more operators including "-" for excluding results. example
 ### Useful daily application:
 Some sites are designed for administrative use and are not intended to be used by the general public. This doesn't stop Web Crawlers from collecting them, however, they don't usually show in search results.
 
-General Search: [northwestern sps courses](https://www.google.com/search?q=northwestern%20sps%20courses) <br>
+General Search:
+[northwestern sps courses](https://www.google.com/search?q=northwestern%20sps%20courses)<br>
 Results:
 https://sps.northwestern.edu/part-time-undergraduate/view-all-courses.php
 
-Advanced Search: [inurl: (sps & northwestern & view courses)](https://www.google.com/search?q=inurl:%20(sps%20%26%20northwestern%20%26%20view%20courses)) <br>
+
+Advanced Search:
+[inurl: (sps & northwestern & view courses)](https://www.google.com/search?q=inurl:%20(sps%20%26%20northwestern%20%26%20view%20courses)) <br>
 Results: https://sps.northwestern.edu/part-time-undergraduate/view-courses.php
+
+Related Sites:
+[related:hackthebox](https://www.google.com/search?q=related:hackthebox)
 
 #### Alternative advanced search
 Jumping from page to page and using a site's limited search tools can be frustrating. You can use Google's advanced search parameters to search websites faster and more efficiently.
