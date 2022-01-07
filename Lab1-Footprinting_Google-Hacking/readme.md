@@ -8,7 +8,18 @@ Something most people don't realize is how extensively Search Engines crawl site
 
 A Google Hack, or Dork as it's often called, is the application of advanced search criteria to find these sensitive files and sites. A good site for researching Dorks is https://www.exploit-db.com/google-hacking-database
 
-## Examples:
+
+## Basics:
+Google has many powerful advanced operators and most are easily readable. Some of my favorites are:
+
+* inurl:
+* site: 
+* intext:
+
+There are other many more operators including "-" for excluding results. example: -keyword. Using "()" for segmenting queries. We'll see examples next. The advance searching language is very flexible as we'll see so feel free to explore and create your own searches.
+
+
+## Applications:
 ### Useful daily application:
 Some sites are designed for administrative use and are not intended to be used by the general public. This doesn't stop Web Crawlers from collecting them, however, they don't usually show in search results.
 
@@ -60,4 +71,6 @@ Below are some examples of how data can be crawled by search engines and found b
 
 ***
 ## Summary
-Google hacking or Dorking should be in every security professional's repertoire. The tools are tested and proven. They're a part of a tested brand and will continue to grow and update as Technology expands. There is also an expansive and powerful database of dorks to pull from and they're easy to read and customize.
+Google hacking or Dorking should be in every security professional's repertoire. The tools are tested and proven. They're a part of a tested brand and will continue to grow and update as Technology continues to grow. There is also an expansive and powerful database of dorks to pull from and they're easy to read and customize.
+
+It is vital for blue team members to know what their attack surface is and what information is being exposed to the internet. Using these tools you can see the internet as attackers do and begin to close up insecurities.
