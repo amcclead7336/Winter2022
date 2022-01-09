@@ -16,13 +16,16 @@ You are a New Network Admin and you need to check what ports are open on one of 
 30-45 Minutes
 
 ## Part 1: Device Detection and OS Scanning
-1. Nmap is normally run in the command line, however, for new network admins and ethical hackers, Nmap also provides a graphical user interface (GUI) to work with called Zenmap. Sadly, Nmap is no longer supporting Zenmap Debian/kali installations. For Zenmap demos, we'll install it on Windows 10 running as administrator. You can download the exe for install [here](https://nmap.org/download.html).
+1. Nmap is normally run in the command line, however, for new network admins and ethical hackers, Nmap also provides a graphical user interface (GUI) to work with called Zenmap. Sadly, Nmap is no longer supporting Zenmap Debian/kali installations. For Zenmap demos, we'll install it on Windows 10 running as administrator. You can download the exe for install [here](https://nmap.org/download.html). <br>
+
 <img src="images/nmap_open.png" alt="Zenmap Open" width="400px"/>
 
-2. Before we begin, we want to clear everything from the command box except for “nmap”. When we first join a network, we want to see who else is out there. We can do this by clicking in the Target Field and typing our network id “10.0.2.0/24” and pressing “Scan”
+2. Before we begin, we want to clear everything from the command box except for “nmap”. When we first join a network, we want to see who else is out there. We can do this by clicking in the Target Field and typing our network id “10.0.2.0/24” and pressing “Scan” <br>
+
 <img src="images/init_scan.png" alt="Initial Scan" width="400px"/>
 
-3. According to Nmap there are five hosts on my network. Currently, we have very little information on each of the addresses returned. We know which one is ours but what about the others? If we look in the host details tab all we see is the statistics on what we have scanned. NOTE: It is possible that devices may not respond to Nmap’s initial ping and therefore will not get listed here by Nmap.
+3. According to Nmap there are five hosts on my network. Currently, we have very little information on each of the addresses returned. We know which one is ours but what about the others? If we look in the host details tab all we see is the statistics on what we have scanned. NOTE: It is possible that devices may not respond to Nmap’s initial ping and therefore will not get listed here by Nmap. <br>
+
 <img src="images/host_details.png" alt="Host Details" width="400px"/>
 
 4. We can use Nmap to determine (or give us a best guess) what operating systems are on the network. To do this we can go to Profile->New Profile and here we’ll give our new profile a name. I have called it “OS Scan”. From there we can go to Scan and select the option Operating System Detection (-O) and click “Save Changes”
@@ -31,10 +34,12 @@ OS Scan p1  |  OS Scan p2
 :----------:|:------------:
 ![Create OS Scan 1](images/creating_profile_part1.png) | ![Create OS Scan 2](images/creating_profile_part2.png)
 
-5. Once you have the profile saved you can then select it and run it in the profile section.
+5. Once you have the profile saved you can then select it and run it in the profile section. <br>
+
 <img src="images/os_scan.png" alt="OS Scan" width="400px"/>
 
-6. After running the scan we can see that we’re working with a Linux 2.6.9-2.6.33 computer at address 10.0.2.7
+6. After running the scan we can see that we’re working with a Linux 2.6.9-2.6.33 computer at address 10.0.2.7 <br>
+
 <img src="images/host_details2.png" alt="Host Details with OS Scan" width="400px"/>
 
 7. Continuing forward we will focus on the 10.0.2.7 metasploitable2 machine so we can change our target field to that address. This will increase the speed of our scans and reduce the noise (excess traffic) we produce while scanning.
@@ -46,9 +51,12 @@ Full Scan p1  |  Full Scan p2
 :----------:|:------------:
 ![Create Full Scan 1](images/create_profile2_part1.png) | ![Create Full Scan 2](images/create_profile2_part2.png)
 
-2. With this new scan we can see that more ports are open, including a couple of SQL ports. We can dive deeper into these ports by telling Nmap to try and detect the versions in use. You can go to Profile->Edit Selected Profile->Version Detection to enable the Version detection setting in the Nmap scanner. After the scan finishes, we can see more detailed information in the Ports/Hosts tab.
+2. With this new scan we can see that more ports are open, including a couple of SQL ports. We can dive deeper into these ports by telling Nmap to try and detect the versions in use. You can go to Profile->Edit Selected Profile->Version Detection to enable the Version detection setting in the Nmap scanner. After the scan finishes, we can see more detailed information in the Ports/Hosts tab.<br>
+
 <img src="images/add_service_detect.png" alt="Service Detect Add" width="400px"/>
+
 <img src="images/Service_Scan.png" alt="Service Scan" width="400px"/>
+
 3. From here we can check to see if any of the versions of services we’re running are vulnerable to attack through online references. Port 21 is running an old version of vsftpd 2.3.4 which has an known exploit. We can use a script to test whether the system is vulnerable to an attack. Create a new profile, I named mine “vsftpd 2.3.4 exploit”, and go to the scripts tab. Check the box for ftp-vsftpd-backdoor and set the port to 21. After running the command we can see that the system is vulnerable. If we’re an attacker, we can continue to exploit the vulnerability or, if we’re an admin, we can upgrade the service and protect the system.
 
 ## Part 3: Defending Against Scanning
@@ -67,4 +75,4 @@ Some of the best ways to defend against Nmap scanning are:
 * Try some of the NSE scripts that come with Nmap. Especially the ftp-vsftpd-backdoor NSE script.
 
 ## Conclusion
-It is important to note that Nmap has a vast collection of resources for many different purposes and it would be impossible to cover them all in just one lab. With a working understanding of how the Nmap GUI works you should now be able to put together your scans and understand the result. You should feel free to experiment with different types of scans on your own devices and see what the results are. 
+It is important to note that Nmap has a vast collection of resources for many different purposes and it would be impossible to cover them all in just one lab. With a working understanding of how the Nmap GUI works you should now be able to put together your scans and understand the result. You should feel free to experiment with different types of scans on your own devices and see what the results are.
