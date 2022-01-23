@@ -10,7 +10,6 @@ Setup and demonstrate the use of sqlmap in the enumeration of sql databases and 
 ## Lab Environment
 * Kali linux VM
 * Damn Vulnerable Web Application (DVWA) running in docker on Kali
-* Maybe Juice Shop in Docker on Kali
 
 ## Lab Duration
 15-30 minutes
